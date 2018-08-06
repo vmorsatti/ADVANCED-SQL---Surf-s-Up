@@ -1,6 +1,6 @@
 
 # Surf's Up!  Assignment
-## produced by Verna Orsatti August 5, 2018
+###   -produced by Verna Orsatti August 5, 2018
 
 
 ```python
@@ -33,15 +33,12 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from sqlalchemy import inspect
-
-%ls
 ```
 
-    [34mImages[m[m/                              climate_starter_Verna.ipynb
-    README.md                            precip_df.png
-    [34mResources[m[m/                           precipitation_amounts.png
-    climate_starter-Original_copy.ipynb  temperature_results_hist.png
-    climate_starter_Verna-Copy1.ipynb    trip_ave_temp.png
+    [34mImages[m[m/                                climate_starter_VernaOrsatti.py.ipynb
+    README.md                              precipitation_amounts.png
+    [34mResources[m[m/                             temperature_results_hist.png
+    climate_starter-Original_copy.ipynb    trip_ave_temp.png
 
 
 
@@ -92,7 +89,7 @@ inspector
 
 
 
-    <sqlalchemy.engine.reflection.Inspector at 0x10f864080>
+    <sqlalchemy.engine.reflection.Inspector at 0x10bb02128>
 
 
 
@@ -174,6 +171,8 @@ year_ago
 
 ```python
 # View Test information from Measurement
+# An average of the Station's precipitation measurment is used for this analysis as it made more analysis sense.
+#   The original requirements were for querying precipitation amounts, without mention of average
 test_precip_twelve = session.query(Measurement.date,
                                    func.avg(Measurement.prcp))\
     .filter(Measurement.date > year_ago)\
