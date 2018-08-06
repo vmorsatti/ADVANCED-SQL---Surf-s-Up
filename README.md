@@ -35,12 +35,6 @@ from sqlalchemy import create_engine, func
 from sqlalchemy import inspect
 ```
 
-    [34mImages[m[m/                                climate_starter_VernaOrsatti.py.ipynb
-    README.md                              precipitation_amounts.png
-    [34mResources[m[m/                             temperature_results_hist.png
-    climate_starter-Original_copy.ipynb    trip_ave_temp.png
-
-
 
 ```python
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
@@ -89,7 +83,7 @@ inspector
 
 
 
-    <sqlalchemy.engine.reflection.Inspector at 0x10bb02128>
+    <sqlalchemy.engine.reflection.Inspector at 0x111cc5048>
 
 
 
@@ -549,18 +543,6 @@ for row in test_precip_twelve:
     ('2017-08-22', 0.16666666666666666)
     ('2017-08-23', 0.1325)
 
-
-
-```python
-# # Perform a query to retrieve the data and precipitation scores
-# # Most recent date in table is 2017-08-23 
-# # Get a query of most recent 12 months of data
-# precip_twelve = session.query(Measurement.date, 
-#                   func.avg(Measurement.prcp))\
-#     .filter(Measurement.date > year_ago)\
-#     .group_by(Measurement.date)
-  
-```
 
 
 ```python
